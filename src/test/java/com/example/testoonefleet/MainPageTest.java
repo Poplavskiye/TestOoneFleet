@@ -46,8 +46,8 @@ public class MainPageTest {
         passwordField.sendKeys("qwerty12345");
         passwordField.submit();
 
-        WebElement validation = driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div[1]/div/main/form/div[2]/div/div[1]/div/label"));
-        assertEquals("Incorrect email or password", validation.getAttribute("class"), "Password wrong");
+        WebElement validation = driver.findElement(By.cssSelector(".CustomInput_error-message__RSfgB > span"));
+        assertEquals("Incorrect email or password", validation.getText(), "Password wrong");
     }
 
     @Test
